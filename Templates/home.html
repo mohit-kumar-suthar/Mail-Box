@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Mail Box - Home{% endblock %}
+{% block body %}
+{% include 'header.html'%}
+<div class="container" id='send_con'>
+    <legend>Welcome To <i class="fa fa-envelope-o"></i> Mail-Box <i class="fa fa-smile-o"></i></legend><hr>
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="alert alert-info" role="alert">
+                <h5>Our featues is here <i class="fa fa-hand-o-down"></i></h5>
+                <i class="fa fa-caret-square-o-right"></i> Secure Login<br>
+                <i class="fa fa-caret-square-o-right"></i> User friendly<br>
+                <i class="fa fa-caret-square-o-right"></i> Two time authentication<br>
+                <i class="fa fa-caret-square-o-right"></i> Mail Box used secue port<br>
+                <i class="fa fa-caret-square-o-right"></i> Send mail with TLS<br>
+                <i class="fa fa-caret-square-o-right"></i> Protected and Bugs free<br>
+                <i class="fa fa-caret-square-o-right"></i> Send mail with Attachment using SMTP<br>
+                <i class="fa fa-caret-square-o-right"></i> Delete and Fetch mail using POP3<br>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+            <div class="alert alert-success">
+            <h5>About our team "Fire-Code" <i class="fa fa-hand-o-down"></i></h5>
+            <i class="fa fa-caret-square-o-right"></i> Lead member : Mohit Kumar Suthar<br>
+            <i class="fa fa-caret-square-o-right"></i> Members :<br>
+            <i class="fa fa-caret-right"></i> Shalini Singh<br>
+            <i class="fa fa-caret-right"></i> Ambar Khan<br>
+            <i class="fa fa-caret-right"></i> Ashutosh Thakur<br>
+            <i class="fa fa-caret-right"></i> Gaurav Kumar Goyal<br>
+
+              
+                        
+            </div>
+        </div>
+    </div><br><br><br>
+</div>
+{% include 'footer.html'%}
+{% endblock %}

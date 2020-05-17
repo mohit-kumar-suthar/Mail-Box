@@ -1,0 +1,11 @@
+
+    <nav class="navbar fixed-top navbar-light bg-light shadow p-3 mb-5 bg-white rounded">
+        <a class="navbar-brand " href="{% url 'home' %}">
+            <button class="btn btn-primary" type="button"><i class="fa fa-envelope"></i></button>
+            Mail-Box
+        </a>
+        <h4><i style="color: dodgerblue;" class="fa fa-user"></i> {{email}}</h4>
+        <a href="{% url 'logout' %}"> <h4><i class="fa fa-sign-out"></i>Logout</h4></a>
+    </nav>
+
+{% include 'side_bar.html'%}

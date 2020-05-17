@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Mail Box - Send Mail{% endblock %}
+{% block body %}
+{% include 'header.html'%}
+<div class="container" id='send_con'>
+    <div class="row">
+        <div class="col-sm-5" >
+            {% if msg_send %}
+            <div class="alert alert-warning" role="alert">
+             {{msg_send}}
+            </div>
+            {% endif %}
+           
+            {% if send_form.errors %}
+            <div class="alert alert-warning" role="alert">
+              {{send_form.errors}}
+            </div>
+            {% endif %}
+            <div class="alert alert-info" role="alert">
+                <strong>Security for {{email}}</strong><br>
+                <h6>- Two time authentication</h6>
+                <h6>- Mail send with TLS </h6>
+                <h6>- Fast, Secure and Dugs free</h6>
+         </div>
+        </div>
+        <div class="col-sm-1"></div>
+    <div class="col-sm-6">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <legend>Send Mail Now</legend><hr>
+        <div class="form-group">
+            {{send_form.From}}
+        </div>
+        <div class="form-group">
+            {{send_form.To}}
+        </div>
+        <div class="form-group">
+            {{send_form.CC}}
+        </div>
+        <div class="form-group">  
+            {{send_form.BCC}}
+        </div>
+        <div class="form-group">
+            {{send_form.subject}}
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                {{send_form.attach}}
+                <label class="custom-file-label" for="customFileLang">Choose File</label>
+              </div>
+        </div>
+        <div class="form-group">
+            {{send_form.message}}
+        </div>
+        <input type="submit" class="btn btn-primary" value="Send Mail">
+      </form>
+      </div>
+      
+    </div><br><br><br>
+</div>
+{% include 'footer.html'%}
+{% endblock %}

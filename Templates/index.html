@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+{% block title %}Mail Box - Login{% endblock %}
+
+{% block body %}
+<nav class="navbar fixed-top navbar-light bg-light shadow p-3 mb-5 bg-white rounded">
+  <a class="navbar-brand " href="#">
+    <button class="btn btn-primary" type="button"><i class="fa fa-envelope"></i></button>
+    Mail-Box</a>
+    </nav>
+<div class="container" id="index_con">
+  <div class="row">
+    <div class="col-sm-5">
+      {% if form.errors %}
+      <div class="alert alert-warning" role="alert">
+        {{form.errors}}
+      </div>
+      {% endif %}
+      <div class="alert alert-info" role="alert">
+        <strong>Information For Users</strong><br>
+        <h6>- Create Gmail Account <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">click here</a></h6>
+        <h6>- Trun on Less secure app access <a href="https://myaccount.google.com/lesssecureapps?gar=1">click here</a></h6>
+        <h6>- Use Gmail Account Id and password for Login</h6>
+        <h6>- Forgot password <a href="https://myaccount.google.com/intro/signinoptions/password">click here</a></h6>
+        
+      </div>
+    </div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-3">
+          <form method="POST">
+            {% csrf_token %}
+            <legend>Login Now</legend>
+            <div class="form-group">
+                {{form.email}}
+            </div>
+            <div class="form-group">
+                {{form.password}}
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login">
+          </form>
+        </div>
+  </div>
+</div><br><br><br>
+{% include 'footer.html'%}
+{% endblock %}

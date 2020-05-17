@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Mail Box - Inbox{% endblock %}
+{% block body %}
+{% include 'header.html'%}
+<div class="container" id='send_con'>
+   <div class="row">
+       <div class="col-sm-5">
+        <legend>Your Fetched Mail</legend><hr>
+        {% if fetch_form.errors %}
+        <div class="alert alert-warning" role="alert">
+         {{fetch_form.errors}}
+        </div>
+        {%endif%}
+        {% if network_msg %}
+        <div class="alert alert-warning" role="alert">
+         {{network_msg}}
+        </div>
+        {%endif%}
+        {%if from_fetch%}
+        <div class="alert alert-success" role="alert">
+            <a href="{% url 'delete_mail' %}" class="btn btn-danger" role="button" aria-pressed="true">
+            delete <i class="fa fa-trash-o"></i></a><hr>
+            <h5>From:</h5>{{from_fetch}}<hr>
+            <h5>To:</h5>{{to_fetch}}<hr>
+            {% if cc_fetch %}
+            <h5>Cc:</h5>{{cc_fetch}}<hr>
+            {% endif %}
+            <h5>Subject:</h5>{{sub_fetch}}<hr>
+            <h5>Body:</h5>{{body_fetch}}<hr>
+       </div>
+       {%endif%}
+       {%if no_mail %}
+        <div class="alert alert-warning" role="alert">
+            {{no_mail}}
+        </div>
+        {% endif %}
+       </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+                <form method="POST">
+                    {% csrf_token %}
+                    <legend>Fetch Mail Here</legend><hr>
+                    <div class="form-group">
+                        <small>Total Mails Count </small>
+                        {{fetch_form.fetch_num}}
+                    </div>
+                    <div class="form-group">
+                        {{fetch_form.fetch}}
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Fetch Now">
+                </form><br>
+                <div class="alert alert-info" role="alert">
+                    <strong>Security for {{email}}</strong><br>
+                    <h6>- Secure port </h6>
+                    <h6>- Two time authentication </h6>
+                    <h6>- Only allowed after user authentication</h6>
+                    <h6>- Fast, Secure and Dugs free</h6>
+    
+                    <strong>Help for {{email}}</strong><br>
+                    <h6>- By default top first mail show here </h6>
+                    <h6>- For fetching mail enter your mail no. </h6>
+                </div>
+            </div>
+
+        </div><br><br><br>
+       
+   </div>
+   {% include 'footer.html'%}
+{% endblock %}

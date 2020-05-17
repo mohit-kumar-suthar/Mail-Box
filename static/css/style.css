@@ -1,0 +1,49 @@
+#index_con{
+    padding-top: 80px;
+    margin-top: 150px;
+}
+
+#send_con{
+  padding-left: 100px;
+  margin-top: 150px;
+
+}
+
+
+
+
+#mySidenav a {
+    position: absolute;
+    left: -58px;
+    transition: 0.5s;
+    padding: 10px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  #mySidenav a:hover {
+    left: 0;
+  }
+
+  #home {
+    top: 300px;
+    background-color: cornflowerblue;
+  }
+
+  #index {
+    top: 200px;
+    background-color: #4CAF50;
+  }
+  
+  #send {
+    top: 250px;
+    background-color: darkorange;
+  }
+  
+
+  
+
+
