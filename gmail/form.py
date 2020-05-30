@@ -30,8 +30,7 @@ class Login(forms.Form):
             smtp.login(email,password)
         except:
             raise forms.ValidationError(_('invalid gmail id or password / turn on less secure app access'),code='invalid')
-        finally:
-            smtp.quit()
+     
 
 class send_form(forms.Form):
     From=forms.EmailField()

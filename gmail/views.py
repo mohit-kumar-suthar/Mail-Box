@@ -31,6 +31,7 @@ def logout(request):
         del request.session['email']
         del request.session['password']
         del request.session['fetch']
+      
     except:
         pass
     return redirect('index')
