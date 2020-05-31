@@ -17,13 +17,11 @@ def index(request):
     return render(request,'index.html',{'form':form})
 
 def home(request):
-    if request.session.get('email'):
-        context={
+    context={
             'email':request.session.get('email'),
             }
-        return render(request,'home.html',context)
-    else:
-        return redirect('index')
+    return render(request,'home.html',context)
+ 
 
 
 def logout(request):
