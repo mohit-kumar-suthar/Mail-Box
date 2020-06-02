@@ -29,7 +29,7 @@ class Login(forms.Form):
             smtp.ehlo
             smtp.login(email,password)
         except:
-            raise forms.ValidationError(_('Invaild gmail or password/ Turn on less secure app access/ Unlock ceptcha'),code='invalid')
+            raise forms.ValidationError(_('Invaild gmail or password/ Turn on less secure app access/ Allow new device first time'),code='invalid')
      
 
 class send_form(forms.Form):
