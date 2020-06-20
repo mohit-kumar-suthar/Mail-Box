@@ -4,8 +4,6 @@ from gmail.mail_send import send_smtp
 from gmail.rec_mail import receive_pop,num_mail,delete_msg
 # Create your views here.
 
-def demo(request):
-    return redirect("link")
 
 def index(request):
     form=Login()
