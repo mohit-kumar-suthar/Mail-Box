@@ -82,7 +82,7 @@ class send_form(forms.Form):
         bcc=cleaned_data.get('BCC')
         From=cleaned_data.get('From')
         if to==cc!=bcc:
-            raise forms.ValidationError('fields To and CC donot same')
+            raise forms.ValidationError('fields To and CC donot contain same email')
         if cc==bcc!=to:
             if cc=='' and bcc=='':
                 pass
